@@ -5,12 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { OrderViewComponent } from './views/order-view/order-view.component';
+import { ApiWorkOrdersService } from './api-services/api-work-orders.service';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OrderViewComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ApiWorkOrdersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

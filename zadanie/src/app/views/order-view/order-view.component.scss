@@ -1,0 +1,36 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.search-nav{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+
+  > form{
+    margin-right:15px;
+    >input{
+      height:20px;
+    }
+  }
+
+  > button{
+    background-color: lightgray;
+    border-radius: 20px;
+    cursor: pointer;
+    height:20px;
+  }
+}
