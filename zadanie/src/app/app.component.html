@@ -1,0 +1,42 @@
+
+
+<form (submit)="search()" (keyup)="search()" action="" autocomplete="off">
+      <input
+        class="sel-search-input"
+        [(ngModel)]="searchQuery"
+        autocomplete="on"
+        name="searchQuery"
+        maxlength="50"
+        type="search"
+        #searchInput
+      />
+</form>
+<button title="Wyszukaj frazę {{ searchQuery }}" (click)="search()" maAccEvents>
+      <span>Szukaj</span>
+</button>
+<table>
+  <tr>
+    <td >WO ID</td>
+    <td>Description</td>
+    <td>Received date</td>
+    <td>Assigned to</td>
+    <td>Status</td>
+    <td>Priority</td>
+  </tr>
+
+  <tr *ngFor="let order of ordersFiltered">
+    <td >{{ order.work_order_id }}</td>
+    <td>{{order.description}}</td>
+    <td>{{order.received_date}}</td>
+    <td>
+      <ng-container *ngFor="let user of order.assigned_to">
+        {{user.person_name + ", " + user.status }}<br>
+
+      </ng-container>
+    </td>
+    <td>{{order.status }}</td>
+    <td>{{order.priority }}</td>
+  </tr>
+
+</table>
+<router-outlet></router-outlet>
